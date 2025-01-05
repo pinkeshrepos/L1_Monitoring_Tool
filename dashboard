@@ -1,0 +1,14 @@
+import time
+
+def dashboard():
+    while True:
+        print("\n--- Real-Time Monitoring Dashboard ---")
+        cpu_usage()
+        memory_usage()
+        disk_usage()
+        network_connections()
+        time.sleep(10)
+
+# Real-Time Dashboard
+dashboard()
+

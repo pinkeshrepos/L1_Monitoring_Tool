@@ -1,0 +1,104 @@
+import logging
+
+# Setup logging configuration (correct the file path)
+logging.basicConfig(filename='logs/monitoring.log', level=logging.INFO, 
+                    format='%(asctime)s - %(message)s')
+
+# Replace print statements with logging
+def ping_check(host):
+    response = os.system(f"ping -c 3 {host}")
+    if response == 0:
+        logging.info(f"{host} is reachable")
+    else:
+        logging.info(f"{host} is not reachable")
+        
+# Continue to update other parts of the script similarly with logging.info
+
+2025-01-05 12:39:25,289 - Starting system monitoring dashboard...
+2025-01-05 12:39:25,289 - Checking ping for 8.8.8.8...
+2025-01-05 12:39:27,303 - 8.8.8.8 is reachable
+2025-01-05 12:39:27,303 - Checking disk usage...
+2025-01-05 12:39:27,303 - Disk usage: 43.7%
+2025-01-05 12:39:27,303 - Checking CPU usage...
+2025-01-05 12:39:28,303 - CPU usage: 1.0%
+2025-01-05 12:39:28,304 - Checking memory usage...
+2025-01-05 12:39:28,304 - Memory usage: 75.7%
+2025-01-05 12:39:28,304 - Checking active network connections...
+2025-01-05 12:39:28,321 - Active network connections:
+Netid State  Recv-Q Send-Q      Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0               127.0.0.1:323        0.0.0.0:*          
+udp   UNCONN 0      0              127.0.0.54:53         0.0.0.0:*          
+udp   UNCONN 0      0           127.0.0.53%lo:53         0.0.0.0:*          
+udp   UNCONN 0      0      172.31.10.187%enX0:68         0.0.0.0:*          
+udp   UNCONN 0      0                   [::1]:323           [::]:*          
+tcp   LISTEN 0      4096        127.0.0.53%lo:53         0.0.0.0:*          
+tcp   LISTEN 0      4096           127.0.0.54:53         0.0.0.0:*          
+tcp   LISTEN 0      151             127.0.0.1:3306       0.0.0.0:*          
+tcp   LISTEN 0      70              127.0.0.1:33060      0.0.0.0:*          
+tcp   LISTEN 0      511               0.0.0.0:80         0.0.0.0:*          
+tcp   LISTEN 0      511                  [::]:80            [::]:*          
+tcp   LISTEN 0      4096                    *:22               *:*          
+
+2025-01-05 12:39:28,322 - Checking nginx service status...
+2025-01-05 12:39:28,327 - nginx is running
+2025-01-05 12:39:28,327 - Checking mysql service status...
+2025-01-05 12:39:28,332 - mysql is running
+2025-01-05 12:39:28,332 - Sleeping for 10 seconds before the next round of checks...
+2025-01-05 12:39:38,332 - Checking ping for 8.8.8.8...
+2025-01-05 12:39:40,340 - 8.8.8.8 is reachable
+2025-01-05 12:39:40,340 - Checking disk usage...
+2025-01-05 12:39:40,340 - Disk usage: 43.7%
+2025-01-05 12:39:40,340 - Checking CPU usage...
+2025-01-05 12:39:41,341 - CPU usage: 1.0%
+2025-01-05 12:39:41,341 - Checking memory usage...
+2025-01-05 12:39:41,341 - Memory usage: 75.6%
+2025-01-05 12:39:41,341 - Checking active network connections...
+2025-01-05 12:39:41,344 - Active network connections:
+Netid State  Recv-Q Send-Q      Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0               127.0.0.1:323        0.0.0.0:*          
+udp   UNCONN 0      0              127.0.0.54:53         0.0.0.0:*          
+udp   UNCONN 0      0           127.0.0.53%lo:53         0.0.0.0:*          
+udp   UNCONN 0      0      172.31.10.187%enX0:68         0.0.0.0:*          
+udp   UNCONN 0      0                   [::1]:323           [::]:*          
+tcp   LISTEN 0      4096        127.0.0.53%lo:53         0.0.0.0:*          
+tcp   LISTEN 0      4096           127.0.0.54:53         0.0.0.0:*          
+tcp   LISTEN 0      151             127.0.0.1:3306       0.0.0.0:*          
+tcp   LISTEN 0      70              127.0.0.1:33060      0.0.0.0:*          
+tcp   LISTEN 0      511               0.0.0.0:80         0.0.0.0:*          
+tcp   LISTEN 0      511                  [::]:80            [::]:*          
+tcp   LISTEN 0      4096                    *:22               *:*          
+
+2025-01-05 12:39:41,344 - Checking nginx service status...
+2025-01-05 12:39:41,351 - nginx is running
+2025-01-05 12:39:41,351 - Checking mysql service status...
+2025-01-05 12:39:41,355 - mysql is running
+2025-01-05 12:39:41,355 - Sleeping for 10 seconds before the next round of checks...
+2025-01-05 12:39:51,355 - Checking ping for 8.8.8.8...
+2025-01-05 12:39:53,362 - 8.8.8.8 is reachable
+2025-01-05 12:39:53,362 - Checking disk usage...
+2025-01-05 12:39:53,362 - Disk usage: 43.7%
+2025-01-05 12:39:53,362 - Checking CPU usage...
+2025-01-05 12:39:54,363 - CPU usage: 1.0%
+2025-01-05 12:39:54,363 - Checking memory usage...
+2025-01-05 12:39:54,363 - Memory usage: 75.5%
+2025-01-05 12:39:54,363 - Checking active network connections...
+2025-01-05 12:39:54,366 - Active network connections:
+Netid State  Recv-Q Send-Q      Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0               127.0.0.1:323        0.0.0.0:*          
+udp   UNCONN 0      0              127.0.0.54:53         0.0.0.0:*          
+udp   UNCONN 0      0           127.0.0.53%lo:53         0.0.0.0:*          
+udp   UNCONN 0      0      172.31.10.187%enX0:68         0.0.0.0:*          
+udp   UNCONN 0      0                   [::1]:323           [::]:*          
+tcp   LISTEN 0      4096        127.0.0.53%lo:53         0.0.0.0:*          
+tcp   LISTEN 0      4096           127.0.0.54:53         0.0.0.0:*          
+tcp   LISTEN 0      151             127.0.0.1:3306       0.0.0.0:*          
+tcp   LISTEN 0      70              127.0.0.1:33060      0.0.0.0:*          
+tcp   LISTEN 0      511               0.0.0.0:80         0.0.0.0:*          
+tcp   LISTEN 0      511                  [::]:80            [::]:*          
+tcp   LISTEN 0      4096                    *:22               *:*          
+
+2025-01-05 12:39:54,366 - Checking nginx service status...
+2025-01-05 12:39:54,372 - nginx is running
+2025-01-05 12:39:54,372 - Checking mysql service status...
+2025-01-05 12:39:54,377 - mysql is running
+2025-01-05 12:39:54,377 - Sleeping for 10 seconds before the next round of checks...

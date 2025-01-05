@@ -1,0 +1,10 @@
+{
+    "ping_hosts": ["8.8.8.8", "1.1.1.1"],
+    "services_to_monitor": ["nginx", "mysql"],
+    "log_file": "/var/log/syslog",
+    "email_alerts": {
+        "enabled": true,
+        "recipient": "your_email@example.com"
+    }
+}
+
